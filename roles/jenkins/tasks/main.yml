@@ -1,14 +1,5 @@
-- name: Create folders
-  community.general.jenkins_job:
-    config: "{{ lookup('file', '/tmp/job.xml') }}"
-    name: "{{item}}"
-    url: http://172.31.7.18:8080
-    user: admin
-    password: "{{jenkins_password}}"
-  loop:
-    - CIPipelines
-
-- name: Include Pipeline Jobs File
+- name: Create Pipeline Jobs
   ansible.builtin.include_tasks: pipeline.yml
   loop:
     - {name: "frontend", dir: "CIPipelines"}
+
