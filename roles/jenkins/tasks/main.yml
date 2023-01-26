@@ -1,4 +1,4 @@
-- name: Apply tags to tasks within included file
+- name: Include Pipeline Jobs File 
   ansible.builtin.include_tasks: pipeline.yml
   loop:
     - frontend
