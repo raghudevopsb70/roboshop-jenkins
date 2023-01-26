@@ -1,5 +1,5 @@
 - name: Create Pipeline Jobs
-  ansible.builtin.import_tasks: pipeline.yml
+  ansible.builtin.include_tasks: pipeline.yml
   loop:
     - {name: "frontend", dir: "CIPipelines"}
     - {name: "cart", dir: "CIPipelines"}
